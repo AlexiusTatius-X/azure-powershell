@@ -1,3 +1,5 @@
+## 15.6.2 - June 2026
+
 ## 15.6.1 - May 2026
 
 ## 15.6.0 - May 2026
@@ -1312,6 +1314,7 @@
    - Changed the type of parameter `-ManagedResourcesNetworkAccessType` from `ManagedResourcesNetworkAccessType` to `String`
    - Changed the type of parameter `-UserAssignedIdentity` from `Hashtable` to `String[]`
 * Added cmdlet `Update-AzWorkloadsProviderInstance`
+
 
 
 

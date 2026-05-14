@@ -1,3 +1,13 @@
+## 15.6.2 - June 2026
+#### Az.Accounts 5.4.2
+* Upgraded 'Azure.Identity' dependency from 1.13.0 to 1.17.2.
+
+#### Az.DataProtection 2.10.1
+* Fixed non-ASCII U+2013 characters failed module import in WindowsPowerShell
+
+#### Az.Kusto 2.4.1
+* Preannounced breaking changes. Please refer to https://go.microsoft.com/fwlink/?linkid=2333229
+
 ## 15.6.1 - May 2026
 #### Az.DataProtection 2.10.1
 * Fixed non-ASCII U+2013 characters failed module import in WindowsPowerShell
