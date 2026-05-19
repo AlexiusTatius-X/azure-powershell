@@ -1,3 +1,129 @@
+## 16.0.0 - June 2026
+#### Az.Accounts 5.4.2
+* Upgraded 'Azure.Identity' dependency to 1.17.2.
+
+#### Az.CloudService 3.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.Compute 11.6.0
+* Added '-InstantAccess' parameter to 'New-AzRestorePointCollection' cmdlet to enable instant access snapshots for restore points on Premium SSD v2 and Ultra disks
+* Added '-InstantAccess' parameter to 'Update-AzRestorePointCollection' cmdlet to enable or disable instant access on an existing restore point collection
+* Added '-InstantAccessDurationInMinutes' parameter to 'New-AzRestorePoint' cmdlet to specify the duration (1-300 minutes) for which the instant access snapshot is retained
+
+#### Az.ContainerInstance 5.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.Databricks 2.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.DataProtection 3.0.0
+* Changed 'Edit-AzDataProtectionPolicyRetentionRuleClientObject' to require '-Name Default_OperationalStore' for OperationalStore lifecycles
+* Added '-RenameTo' to 'Initialize-AzDataProtectionRestoreRequest' for alternate-location restore
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+* Added Azure Cosmos DB protection support (configure, backup, restore)
+
+#### Az.DnsResolver 2.0.0
+* Upgraded API version to 2025-10-01-preview
+* Added 'Invoke-AzDnsResolverBulkDnsResolverDomainList' for bulk domain upload
+* Upgraded code generator. See [details](https://go.microsoft.com/fwlink/?linkid=2340249).
+* Removed '-ActionBlockResponseCode' from 'New/Update-AzDnsResolverPolicyDnsSecurityRule'
+* Changed '-DnsResolverDomainList' to optional on 'New-AzDnsResolverPolicyDnsSecurityRule' (supports 'ManagedDomainList')
+* Changed '-Domain' to optional on 'New-AzDnsResolverDomainList' (supports bulk upload)
+
+#### Az.FileShare 1.0.0
+* General availability for module Az.FileShare
+
+#### Az.FrontDoor 2.2.0
+* Upgraded API version to 2025-11-01
+* Hid non-public cmdlets: 'NetworkExperimentProfile', 'Experiment', 'PreconfiguredEndpoint', 'ReportLatencyScorecard', 'ReportTimesery'
+* Fixed 'New/Remove-AzFrontDoorWafPolicy' 'UriFormatException' by rewriting LRO 'final-state-via'
+
+#### Az.Functions 5.0.0
+* Migrated Az.Functions from AutoRest PowerShell v3 to v4. See breaking changes [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+    - Replaced '-IdentityType'/'-IdentityID' with '-EnableSystemAssignedIdentity'/'-UserAssignedIdentity'
+    - Enabled combining SystemAssigned and UserAssigned identities
+* Fixed error messages to reference '-EnableSystemAssignedIdentity' instead of removed '-IdentityType'
+* Added SKU validation in 'Update-AzFunctionApp' for Flex Consumption and Container App plans
+* Fixed cloud portability using dynamic 'StorageEndpointSuffix' [#29034]
+* Fixed 'Update-AzFunctionApp' identity fallback to preserve combined identity type
+
+#### Az.KeyVault 6.4.4
+* Fixed 'New-AzKeyVault' 'RequestDisallowedByPolicy' error by setting 'enableSoftDelete' in request body
+
+#### Az.Kusto 2.4.2
+* Preannounced breaking changes. Please refer to https://go.microsoft.com/fwlink/?linkid=2333229
+
+#### Az.LoadTesting 2.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.MachineLearningServices 2.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.ManagedServices 4.0.0
+* Upgraded code generator. See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.Migrate 3.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.Monitor 8.0.0
+* Updated MonitorWorkspace module to API 2025-10-03 with CRUD cmdlets for issues, alerts, resources, investigation, visualization, metrics containers, and 'Set-AzMonitorWorkspace'
+* Upgraded Pipelines API to GA 2026-04-01: added '-DistributionMaxInstancesPerHost', '-ExecutionPlacementConstraint', '-TlsConfiguration'; removed '-NetworkingConfiguration', UDP receiver, 'TcpUrl', 'JsonArrayMapperKey', 'SourceFieldName', 'SyslogProtocol', 'DestinationField*'; expanded parameter sets
+
+#### Az.MySql 2.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.Network 8.0.0
+* Changed 'UserAssignedIdentityId' type from string to string[] in Azure Firewall Policy
+
+#### Az.NetworkCloud 2.0.1
+* Upgraded API version to 2025-09-01
+
+#### Az.PolicyInsights 2.0.0
+* Changed output types: 'PSAttestation' → 'Attestation', 'PSPolicyMetadata' → 'PolicyMetadata', 'PSRemediation' → 'Remediation'; flattened 'SystemData' and added 'ResourceGroupName'
+* Renamed 'ResourceTags'/'ManagementGroupIds' to singular forms in 'Get-AzPolicyEvent'/'Get-AzPolicyState'
+* Flattened 'Get-AzPolicyStateSummary' and remediation output properties
+* Changed 'Start-AzPolicyRemediation' to wait for terminal state by default (added '-NoWait')
+* Changed 'Stop-AzPolicyRemediation' output from 'bool' to 'Remediation' (added '-NoWait')
+
+#### Az.RecoveryServices 7.11.3
+* Added soft delete support for Azure File share backup items ('Undo-AzRecoveryServicesBackupItemDeletion' and 'Get-AzRecoveryServicesBackupItem -DeleteState SoftDeleted')
+
+#### Az.RedisEnterpriseCache 2.0.0
+* Upgraded code generator. See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.ResourceMover 2.0.0
+* Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
+
+#### Az.Resources 10.0.0
+* Updated deployment stack cmdlets to use the '2025-07-01' deployment stacks service version.
+* Added '-ResourcesWithoutDeleteSupport' to deployment stack 'New-', 'Set-', 'Test-', and 'Remove-' cmdlets at subscription, resource group, and management group scopes. This parameter controls whether resources that do not support deletion cause the operation to fail or are detached from the stack. Possible values: 'Fail' (default) and 'Detach'.
+* Added '-ValidationLevel' to deployment stack 'New-', 'Set-', and 'Test-' cmdlets at subscription, resource group, and management group scopes. This parameter controls how deployment stack validation is performed. Possible values: 'Provider' (default), 'Template', and 'ProviderNoRbac' (provider validation without Role-Based Access Control checks).
+* Deployment stack command output now includes the resource deletion support behavior and validation level for the stack.
+* Fixed 'Set-AzRoleAssignment' unable to delete conditions from a role assignment
+* Updated Policy.Autorest to 2025-03-01: added '-Expand' to 'Get-AzPolicyAssignment'/'Get-AzPolicySetDefinition'; removed '-BackwardCompatible'; added Enroll '-EnforcementMode' and ExternalEvaluationEnforcementSettings; extended '-Version' support
+
+#### Az.ServiceFabric 5.2.0
+* Added 'Enable-AzServiceFabricManagedClusterMaintenanceWindow' and 'Get-AzServiceFabricManagedClusterMaintenanceWindowStatus' cmdlets
+
+#### Az.Sql 7.0.0
+* Removed the 'EnableSoftDelete' parameter from 'New-AzSqlServer' and 'Set-AzSqlServer' cmdlets. Use the 'SoftDeleteRetentionDays' parameter instead: setting 'SoftDeleteRetentionDays' to 1-7 enables soft-delete, and setting it to 0 disables soft-delete.
+* Reverted 'the support for UAMI authentication in Data Sync cmdlets'
+
+#### Az.Storage 9.7.0
+* Added Smart access tier and AllowedCopyScope 'All' support in 'New/Set-AzStorageAccount'
+* Added static website configuration in 'Update-AzStorageBlobServiceProperty'
+* Added tags replication in 'Set-AzStorageObjectReplicationPolicy'
+
+#### Az.StorageAction 2.0.0
+* Internal code generation updated. No user-facing changes in this release.
+
+#### Az.StorageCache 0.4.0
+* Added Expansion Jobs CRUD cmdlets ('New/Get/Update/Remove-AzStorageCacheExpansionJob') for AML file systems
+* Upgraded API version to 2026-01-01
+
+#### Az.StorageMover 2.1.0
+* Upgraded API version to 2025-12-01 (Connection resources, S3 HMAC endpoint, data integrity validation, schedule info, job run warnings)
+
 ## 15.6.1 - May 2026
 #### Az.DataProtection 2.10.1
 * Fixed non-ASCII U+2013 characters failed module import in WindowsPowerShell
