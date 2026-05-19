@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 3.0.0
 * [Breaking] `Edit-AzDataProtectionPolicyRetentionRuleClientObject`: AzureBlob OperationalStore retention lifecycles requires `-Name Default_OperationalStore`. Passing `-Name Default` with an OperationalStore lifecycle is rejected.
 * `Initialize-AzDataProtectionRestoreRequest`: added `-RenameTo` parameter to rename target containers during alternate-location item-level restore for AzureBlob and AzureDataLakeStorage workloads.
 * Improved user experience and consistency. This may introduce breaking changes. Please refer to [here](https://go.microsoft.com/fwlink/?linkid=2340249).

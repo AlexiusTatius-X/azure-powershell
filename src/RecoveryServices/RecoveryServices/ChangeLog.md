@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 7.11.3
 * Added soft delete support for Azure File share backup items
     - `Undo-AzRecoveryServicesBackupItemDeletion` now rehydrates soft-deleted Azure File Share items (previously threw `SoftdeleteNotImplementedException`).
     - `Get-AzRecoveryServicesBackupItem -DeleteState SoftDeleted` now correctly filters Azure File Share items by delete state; the `AzureFileShareItem` model populates `DeleteState` and `DateOfPurge` for items marked for deferred delete.

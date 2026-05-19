@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 9.7.0
 * Added support for Smart access tier
     - `New-AzStorageAccount`
     - `Set-AzStorageAccount`

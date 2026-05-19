@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 0.4.0
 * Added support for Expansion Jobs for AML (Azure Managed Lustre) file systems
     - Added 'New-AzStorageCacheExpansionJob' cmdlet to create expansion jobs
     - Added 'Get-AzStorageCacheExpansionJob' cmdlet to retrieve expansion jobs

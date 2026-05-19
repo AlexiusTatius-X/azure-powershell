@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 5.0.0
 * Migrated Az.Functions module from AutoRest PowerShell v3 to v4. This may introduce breaking changes. Please refer to [here](https://go.microsoft.com/fwlink/?linkid=2340249).
     - Replaced `-IdentityType` parameter with `-EnableSystemAssignedIdentity` in `New-AzFunctionApp` (SwitchParameter) and `Update-AzFunctionApp` (Boolean)
     - Replaced `-IdentityID` parameter with `-UserAssignedIdentity` (String array of ARM (Azure Resource Manager) resource IDs) in `New-AzFunctionApp` and `Update-AzFunctionApp`

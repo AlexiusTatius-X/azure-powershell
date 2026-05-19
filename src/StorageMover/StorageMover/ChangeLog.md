@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 2.1.0
 * Upgraded API version to 2025-12-01
     - Added support for Connection resources, enabling private endpoint connectivity management for storage movers
     - Added new S3 with HMAC (Hash-based Message Authentication Code) endpoint type for S3-compatible data sources (e.g., AWS, MinIO, and other providers)
