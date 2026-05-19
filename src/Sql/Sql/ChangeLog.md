@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 7.0.0
 * Reverted "the support for UAMI authentication in Data Sync cmdlets"
 
 ## Version 6.5.0

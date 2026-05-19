@@ -19,6 +19,8 @@
 --->
 
 ## Upcoming Release
+
+## Version 8.0.0
 * Changed `UserAssignedIdentityId` type from string to string[] in Azure Firewall Policy
 
 ## Version 7.27.0
