@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 5.0.0
 * Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
 
 ## Version 4.1.3

@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 3.0.0
 * Changed `Edit-AzDataProtectionPolicyRetentionRuleClientObject` to require `-Name Default_OperationalStore` for OperationalStore lifecycles
 * Added `-RenameTo` to `Initialize-AzDataProtectionRestoreRequest` for alternate-location restore
 * Improved usability and consistency (possible breaking changes). See [here](https://go.microsoft.com/fwlink/?linkid=2340249).
