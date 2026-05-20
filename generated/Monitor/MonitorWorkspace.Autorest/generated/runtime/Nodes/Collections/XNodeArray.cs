@@ -21,11 +21,6 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Js
             items = new List<JsonNode>(values);
         }
 
-        internal XNodeArray(System.Collections.Generic.List<JsonNode> values)
-        {
-            items = new List<JsonNode>(values);
-        }
-
         public override JsonNode this[int index] => items[index];
 
         internal override JsonType? ElementType => null;

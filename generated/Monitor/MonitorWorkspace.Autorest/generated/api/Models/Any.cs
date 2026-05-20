@@ -7,7 +7,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models
 {
     using static Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Extensions;
 
-    /// <summary>Anything</summary>
+    /// <summary>Any object</summary>
     public partial class Any :
         Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAny,
         Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAnyInternal
@@ -19,13 +19,13 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models
 
         }
     }
-    /// Anything
+    /// Any object
     public partial interface IAny :
         Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.IJsonSerializable
     {
 
     }
-    /// Anything
+    /// Any object
     internal partial interface IAnyInternal
 
     {

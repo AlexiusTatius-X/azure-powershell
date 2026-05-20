@@ -7,7 +7,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models
 {
     using static Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Extensions;
 
-    /// <summary>Anything</summary>
+    /// <summary>Any object</summary>
     public partial class Any
     {
 

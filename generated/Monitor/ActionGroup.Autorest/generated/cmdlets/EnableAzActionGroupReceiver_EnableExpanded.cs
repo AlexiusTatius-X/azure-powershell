@@ -501,7 +501,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.ActionGroup.Cmdlets
                     return ;
                 }
                 // onOk - response for 200 /
-                if (true == InvocationInformation?.BoundParameters?.ContainsKey("PassThru"))
+                if (true == MyInvocation?.BoundParameters?.ContainsKey("PassThru"))
                 {
                     WriteObject(true);
                 }

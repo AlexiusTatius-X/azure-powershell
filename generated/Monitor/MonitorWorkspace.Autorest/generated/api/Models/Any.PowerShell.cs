@@ -7,7 +7,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models
 {
     using Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PowerShell;
 
-    /// <summary>Anything</summary>
+    /// <summary>Any object</summary>
     [System.ComponentModel.TypeConverter(typeof(AnyTypeConverter))]
     public partial class Any
     {
@@ -146,7 +146,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models
             return ToJsonString();
         }
     }
-    /// Anything
+    /// Any object
     [System.ComponentModel.TypeConverter(typeof(AnyTypeConverter))]
     public partial interface IAny
 

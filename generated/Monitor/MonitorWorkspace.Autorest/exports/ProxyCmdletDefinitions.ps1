@@ -29,7 +29,7 @@ Get-AzMonitorWorkspace -ResourceGroupName azps_test_group -Name azps-monitor-wor
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResource
+Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResource
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -44,7 +44,7 @@ INPUTOBJECT <IMonitorWorkspaceIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.monitor/get-azmonitorworkspace
 #>
 function Get-AzMonitorWorkspace {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResource])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResource])]
 [CmdletBinding(DefaultParameterSetName='List1', PositionalBinding=$false)]
 param(
     [Parameter(ParameterSetName='Get', Mandatory)]
@@ -76,6 +76,7 @@ param(
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity]
     # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
     [Parameter()]
@@ -134,14 +135,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            throw "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -166,7 +159,9 @@ begin {
             List = 'Az.MonitorWorkspace.private\Get-AzMonitorWorkspace_List';
             List1 = 'Az.MonitorWorkspace.private\Get-AzMonitorWorkspace_List1';
         }
-        if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+        if (('Get', 'List', 'List1') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId')) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -180,9 +175,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -228,16 +220,16 @@ end {
 
 <#
 .Synopsis
-Create a workspace
+Create or update a workspace
 .Description
-Create a workspace
+Create or update a workspace
 .Example
 New-AzMonitorWorkspace -Name azps-monitor-workspace -ResourceGroupName azps_test_group -Location eastus
 
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResource
+Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResource
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -252,12 +244,10 @@ INPUTOBJECT <IMonitorWorkspaceIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.monitor/new-azmonitorworkspace
 #>
 function New-AzMonitorWorkspace {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResource])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResource])]
 [CmdletBinding(DefaultParameterSetName='CreateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaJsonString', Mandatory)]
     [Alias('AzureMonitorWorkspaceName')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [System.String]
@@ -266,8 +256,6 @@ param(
     ${Name},
 
     [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaJsonString', Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [System.String]
     # The name of the resource group.
@@ -275,8 +263,6 @@ param(
     ${ResourceGroupName},
 
     [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaJsonFilePath')]
-    [Parameter(ParameterSetName='CreateViaJsonString')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
     [System.String]
@@ -287,34 +273,21 @@ param(
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity]
     # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='CreateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded', Mandatory)]
+    [Parameter(Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
     [System.String]
     # The geo-location where the resource lives
     ${Location},
 
-    [Parameter(ParameterSetName='CreateExpanded')]
-    [Parameter(ParameterSetName='CreateViaIdentityExpanded')]
+    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.ITrackedResourceTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api30.ITrackedResourceTags]))]
     [System.Collections.Hashtable]
     # Resource tags.
     ${Tag},
-
-    [Parameter(ParameterSetName='CreateViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Create operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='CreateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
-    [System.String]
-    # Json string supplied to the Create operation
-    ${JsonString},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -372,14 +345,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            throw "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -401,10 +366,10 @@ begin {
         $mapping = @{
             CreateExpanded = 'Az.MonitorWorkspace.private\New-AzMonitorWorkspace_CreateExpanded';
             CreateViaIdentityExpanded = 'Az.MonitorWorkspace.private\New-AzMonitorWorkspace_CreateViaIdentityExpanded';
-            CreateViaJsonFilePath = 'Az.MonitorWorkspace.private\New-AzMonitorWorkspace_CreateViaJsonFilePath';
-            CreateViaJsonString = 'Az.MonitorWorkspace.private\New-AzMonitorWorkspace_CreateViaJsonString';
         }
-        if (('CreateExpanded', 'CreateViaJsonFilePath', 'CreateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+        if (('CreateExpanded') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId')) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -418,9 +383,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -521,6 +483,7 @@ param(
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity]
     # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
     [Parameter()]
@@ -597,14 +560,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            throw "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -627,7 +582,9 @@ begin {
             Delete = 'Az.MonitorWorkspace.private\Remove-AzMonitorWorkspace_Delete';
             DeleteViaIdentity = 'Az.MonitorWorkspace.private\Remove-AzMonitorWorkspace_DeleteViaIdentity';
         }
-        if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+        if (('Delete') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId')) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -641,9 +598,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
@@ -689,9 +643,9 @@ end {
 
 <#
 .Synopsis
-Update part of a workspace
+Updates part of a workspace
 .Description
-Update part of a workspace
+Updates part of a workspace
 .Example
 Update-AzMonitorWorkspace -Name azps-monitor-workspace -ResourceGroupName azps_test_group -Tag @{"123"="abc"}
 .Example
@@ -700,7 +654,7 @@ Get-AzMonitorWorkspace -Name azps-monitor-workspace -ResourceGroupName azps_test
 .Inputs
 Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity
 .Outputs
-Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResource
+Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResource
 .Notes
 COMPLEX PARAMETER PROPERTIES
 
@@ -715,12 +669,10 @@ INPUTOBJECT <IMonitorWorkspaceIdentity>: Identity Parameter
 https://learn.microsoft.com/powershell/module/az.monitor/update-azmonitorworkspace
 #>
 function Update-AzMonitorWorkspace {
-[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResource])]
+[OutputType([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResource])]
 [CmdletBinding(DefaultParameterSetName='UpdateExpanded', PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
 param(
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
     [Alias('AzureMonitorWorkspaceName')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [System.String]
@@ -729,8 +681,6 @@ param(
     ${Name},
 
     [Parameter(ParameterSetName='UpdateExpanded', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [System.String]
     # The name of the resource group.
@@ -738,8 +688,6 @@ param(
     ${ResourceGroupName},
 
     [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath')]
-    [Parameter(ParameterSetName='UpdateViaJsonString')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
     [System.String]
@@ -750,27 +698,15 @@ param(
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Path')]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IMonitorWorkspaceIdentity]
     # Identity Parameter
+    # To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
     ${InputObject},
 
-    [Parameter(ParameterSetName='UpdateExpanded')]
-    [Parameter(ParameterSetName='UpdateViaIdentityExpanded')]
+    [Parameter()]
     [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.IAzureMonitorWorkspaceResourceForUpdateTags]))]
+    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Models.Api20230403.IAzureMonitorWorkspaceResourceForUpdateTags]))]
     [System.Collections.Hashtable]
     # Resource tags
     ${Tag},
-
-    [Parameter(ParameterSetName='UpdateViaJsonFilePath', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
-    [System.String]
-    # Path of Json file supplied to the Update operation
-    ${JsonFilePath},
-
-    [Parameter(ParameterSetName='UpdateViaJsonString', Mandatory)]
-    [Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Category('Body')]
-    [System.String]
-    # Json string supplied to the Update operation
-    ${JsonString},
 
     [Parameter()]
     [Alias('AzureRMContext', 'AzureCredential')]
@@ -828,14 +764,6 @@ begin {
             $PSBoundParameters['OutBuffer'] = 1
         }
         $parameterSet = $PSCmdlet.ParameterSetName
-        
-        $testPlayback = $false
-        $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
-
-        $context = Get-AzContext
-        if (-not $context -and -not $testPlayback) {
-            throw "No Azure login detected. Please run 'Connect-AzAccount' to log in."
-        }
 
         if ($null -eq [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion) {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PowerShellVersion = $PSVersionTable.PSVersion.ToString()
@@ -857,10 +785,10 @@ begin {
         $mapping = @{
             UpdateExpanded = 'Az.MonitorWorkspace.private\Update-AzMonitorWorkspace_UpdateExpanded';
             UpdateViaIdentityExpanded = 'Az.MonitorWorkspace.private\Update-AzMonitorWorkspace_UpdateViaIdentityExpanded';
-            UpdateViaJsonFilePath = 'Az.MonitorWorkspace.private\Update-AzMonitorWorkspace_UpdateViaJsonFilePath';
-            UpdateViaJsonString = 'Az.MonitorWorkspace.private\Update-AzMonitorWorkspace_UpdateViaJsonString';
         }
-        if (('UpdateExpanded', 'UpdateViaJsonFilePath', 'UpdateViaJsonString') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId') ) {
+        if (('UpdateExpanded') -contains $parameterSet -and -not $PSBoundParameters.ContainsKey('SubscriptionId')) {
+            $testPlayback = $false
+            $PSBoundParameters['HttpPipelinePrepend'] | Foreach-Object { if ($_) { $testPlayback = $testPlayback -or ('Microsoft.Azure.PowerShell.Cmdlets.Monitor.MonitorWorkspace.Runtime.PipelineMock' -eq $_.Target.GetType().FullName -and 'Playback' -eq $_.Target.Mode) } }
             if ($testPlayback) {
                 $PSBoundParameters['SubscriptionId'] = . (Join-Path $PSScriptRoot '..' 'utils' 'Get-SubscriptionIdTestSafe.ps1')
             } else {
@@ -874,9 +802,6 @@ begin {
             [Microsoft.WindowsAzure.Commands.Utilities.Common.AzurePSCmdlet]::PromptedPreviewMessageCmdlets.Enqueue($MyInvocation.MyCommand.Name)
         }
         $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Cmdlet)
-        if ($wrappedCmd -eq $null) {
-            $wrappedCmd = $ExecutionContext.InvokeCommand.GetCommand(($mapping[$parameterSet]), [System.Management.Automation.CommandTypes]::Function)
-        }
         $scriptCmd = {& $wrappedCmd @PSBoundParameters}
         $steppablePipeline = $scriptCmd.GetSteppablePipeline($MyInvocation.CommandOrigin)
         $steppablePipeline.Begin($PSCmdlet)
