@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 5.0.0
 * Migrated Az.Functions from AutoRest PowerShell v3 to v4. See breaking changes [here](https://go.microsoft.com/fwlink/?linkid=2340249).
     - Replaced `-IdentityType`/`-IdentityID` with `-EnableSystemAssignedIdentity`/`-UserAssignedIdentity`
     - Enabled combining SystemAssigned and UserAssigned identities
