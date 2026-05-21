@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 2.0.0
 * Added `Invoke-AzDnsResolverBulkDnsResolverDomainList` for bulk domain upload
 * [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
 * Removed `-ActionBlockResponseCode` from `New/Update-AzDnsResolverPolicyDnsSecurityRule`
