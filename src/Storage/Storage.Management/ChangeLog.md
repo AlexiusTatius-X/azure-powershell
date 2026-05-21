@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 9.7.0
 * Added Storage task assignment TriggerType new value MockRun in `New/Update-AzStorageTaskAssignment`
 * Fixed `Get-AzStorageFileContent` and `Set-AzStorageFileContent`
 * Added Smart access tier and AllowedCopyScope 'All' support in `New/Set-AzStorageAccount`
