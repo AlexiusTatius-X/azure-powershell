@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 4.0.0
 * Introduced various new features by upgrading code generator. Please see details [here](https://github.com/Azure/azure-powershell/blob/main/documentation/Autorest-powershell-v4-new-features.md).
 
 ## Version 3.2.2
