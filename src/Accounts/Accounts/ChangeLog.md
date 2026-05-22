@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 5.5.0
 * Added `-AcquirePolicyToken` and `-ChangeReference` dynamic parameters to all write cmdlets for Azure Change Safety policy token acquisition
 * Upgraded `Azure.Identity` dependency to 1.17.2.
 

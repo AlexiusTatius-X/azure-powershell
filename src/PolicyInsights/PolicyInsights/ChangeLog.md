@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 2.0.0
 * Changed output types: `PSAttestation` → `Attestation`, `PSPolicyMetadata` → `PolicyMetadata`, `PSRemediation` → `Remediation`; flattened `SystemData` and added `ResourceGroupName`
 * Renamed `ResourceTags`/`ManagementGroupIds` to singular forms in `Get-AzPolicyEvent`/`Get-AzPolicyState`
 * Flattened `Get-AzPolicyStateSummary` and remediation output properties

@@ -20,6 +20,8 @@
 
 -->
 ## Upcoming Release
+
+## Version 11.6.0
 * Fixed `Set-AzVMRunCommand` and `Set-AzVmssVMRunCommand` to skip blank lines when processing local script files via `-ScriptLocalPath`, preventing invalid `;;` syntax errors in shell scripts.
 * Added `-InstantAccess` parameter to `New-AzRestorePointCollection` cmdlet to enable instant access snapshots for restore points on Premium SSD v2 and Ultra disks
 * Added `-InstantAccess` parameter to `Update-AzRestorePointCollection` cmdlet to enable or disable instant access on an existing restore point collection
