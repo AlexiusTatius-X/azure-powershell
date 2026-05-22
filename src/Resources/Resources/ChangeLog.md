@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 10.0.0
 * Fixed dynamic parameter inheritance in deployment and deployment stack cmdlets
 * Updated deployment stack cmdlets to `2025-07-01` API; added `-ResourcesWithoutDeleteSupport` (`Fail`/`Detach`) and `-ValidationLevel` (`Provider`/`Template`/`ProviderNoRbac`); output now includes these settings
 * Fixed `Set-AzRoleAssignment` unable to delete conditions
