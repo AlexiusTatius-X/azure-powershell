@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 9.7.0
 * Updated the prompt message for user confirmation of long running account migration operation in `Start-AzStorageAccountMigration`
 * Added Storage task assignment TriggerType new value MockRun in `New/Update-AzStorageTaskAssignment`
 * Fixed `Get-AzStorageFileContent` and `Set-AzStorageFileContent`

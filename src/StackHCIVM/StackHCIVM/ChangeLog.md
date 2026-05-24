@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 2.0.0
 * Fixed missing export of `Save-AzStackHCIVMVirtualMachine` and `Suspend-AzStackHCIVMVirtualMachine` cmdlets
 
 ## Version 1.1.1
