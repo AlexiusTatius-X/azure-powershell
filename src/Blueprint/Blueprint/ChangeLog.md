@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 0.5.0
 * ChangeSafety
 
 ## Version 0.4.6

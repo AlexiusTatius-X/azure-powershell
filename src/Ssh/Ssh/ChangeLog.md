@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 0.3.0
 * ChangeSafety
 
 ## Version 0.2.3

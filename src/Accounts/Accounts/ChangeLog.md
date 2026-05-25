@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 5.5.0
 * ChangeSafety
 * Upgraded `Azure.Identity` to 1.17.2.
 

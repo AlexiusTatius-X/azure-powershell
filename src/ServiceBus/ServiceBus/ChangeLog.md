@@ -19,6 +19,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 4.2.0
 * ChangeSafety
 
 ## Version 4.1.1

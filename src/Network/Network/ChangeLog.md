@@ -19,6 +19,8 @@
 --->
 
 ## Upcoming Release
+
+## Version 8.0.0
 * Fixed `Approve-AzPrivateEndpointConnection`, `Deny-AzPrivateEndpointConnection`, `Get-AzPrivateEndpointConnection`, `Remove-AzPrivateEndpointConnection`, `Get-AzPrivateLinkResource`
 * Changed `UserAssignedIdentityId` type to string[]
 

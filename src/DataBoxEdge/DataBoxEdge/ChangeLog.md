@@ -20,6 +20,8 @@
 
 
 ## Upcoming Release
+
+## Version 1.3.0
 * ChangeSafety
 
 ## Version 1.2.1

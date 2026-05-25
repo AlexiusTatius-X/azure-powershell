@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 3.0.0
 * ChangeSafety
 * [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
 

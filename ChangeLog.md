@@ -1,3 +1,272 @@
+## 16.0.0 - June 2026
+#### Az.Accounts 5.5.0
+* ChangeSafety
+* Upgraded 'Azure.Identity' to 1.17.2.
+
+#### Az.Aks 7.2.0
+* ChangeSafety
+
+#### Az.AnalysisServices 1.3.0
+* ChangeSafety
+
+#### Az.ApiManagement 4.2.0
+* ChangeSafety
+
+#### Az.Attestation 3.1.0
+* ChangeSafety
+
+#### Az.Automation 1.12.0
+* ChangeSafety
+
+#### Az.Batch 4.1.0
+* ChangeSafety
+
+#### Az.Billing 2.3.0
+* ChangeSafety
+
+#### Az.CloudService 3.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.CognitiveServices 1.17.0
+* ChangeSafety
+
+#### Az.Compute 11.6.0
+* ChangeSafety
+* Added '-ZonalPlatformFaultDomainAlignMode' to 'New-AzVmssConfig', 'New-AzVmss' (SimpleParameterSet), and 'Update-AzVmss' cmdlets.
+* Added '-OsDiskStorageFaultDomainAlignment' parameter to 'Set-AzVmssStorageProfile' cmdlet.
+* Added '-StorageFaultDomainAlignment' parameter to 'Add-AzVmssDataDisk', 'Set-AzVMOSDisk', and 'Add-AzVMDataDisk' cmdlets.
+* Fixed 'Set-AzVMRunCommand' and 'Set-AzVmssVMRunCommand' to skip blank lines when processing local script files via '-ScriptLocalPath', preventing invalid ';;' syntax errors in shell scripts.
+* Added '-InstantAccess' parameter to 'New-AzRestorePointCollection' and 'Update-AzRestorePointCollection' cmdlets.
+* Added '-InstantAccessDurationInMinutes' parameter to 'New-AzRestorePoint' cmdlet.
+
+#### Az.ContainerInstance 5.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.ContainerRegistry 5.1.0
+* ChangeSafety
+
+#### Az.CosmosDB 1.21.0
+* Fixed 'New-AzCosmosDBAccount'
+
+#### Az.DataBoxEdge 1.3.0
+* ChangeSafety
+
+#### Az.Databricks 2.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.DataFactory 1.20.0
+* ChangeSafety
+
+#### Az.DataLakeAnalytics 1.2.0
+* ChangeSafety
+
+#### Az.DataLakeStore 1.6.0
+* ChangeSafety
+
+#### Az.DataMigration 1.1.0
+* [Preannounced breaking changes](https://go.microsoft.com/fwlink/?linkid=2333229)
+* Fixed 'Invoke-AzDataMigrationCommand', 'New-AzDataMigrationConnectionInfo', 'New-AzDataMigrationTask'
+
+#### Az.DataProtection 3.0.0
+* Changed 'Edit-AzDataProtectionPolicyRetentionRuleClientObject' to require '-Name Default_OperationalStore'
+* Added 'RenameTo' to 'Initialize-AzDataProtectionRestoreRequest'
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+* Added Azure Cosmos DB protection support
+
+#### Az.DataShare 1.2.0
+* ChangeSafety
+
+#### Az.DesktopVirtualization 6.0.0
+* Upgraded API version to 2025-10-10
+* Added MultiplePersistent enum value to HostPool property loadBalancerType.
+* Fixed 'New-AzWvdRegistrationInfo', 'Remove-AzWvdRegistrationInfo'.
+
+#### Az.DevTestLabs 1.2.0
+* ChangeSafety
+
+#### Az.Dns 2.1.0
+* ChangeSafety
+
+#### Az.DnsResolver 2.0.0
+* Added 'Invoke-AzDnsResolverBulkDnsResolverDomainList'
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+* Removed 'ActionBlockResponseCode' from 'New/Update-AzDnsResolverPolicyDnsSecurityRule'
+* Made 'DnsResolverDomainList' optional on 'New-AzDnsResolverPolicyDnsSecurityRule'
+* Made 'Domain' optional on 'New-AzDnsResolverDomainList'
+
+#### Az.EventHub 5.5.0
+* ChangeSafety
+
+#### Az.FileShare 1.0.0
+* General availability for module Az.FileShare
+
+#### Az.FrontDoor 2.2.0
+* Upgraded API version to 2025-11-01
+* Hid cmdlets: 'NetworkExperimentProfile', 'Experiment', 'PreconfiguredEndpoint', 'ReportLatencyScorecard', 'ReportTimesery'
+* Fixed 'New/Remove-AzFrontDoorWafPolicy' 'UriFormatException'
+
+#### Az.Functions 5.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+* Validated SKU in 'Update-AzFunctionApp'
+* Fixed cloud portability using dynamic 'StorageEndpointSuffix' [#29034]
+* Fixed 'Update-AzFunctionApp'
+
+#### Az.HDInsight 6.5.0
+* ChangeSafety
+
+#### Az.IotHub 2.9.0
+* Fixed 'Add-AzIotHubDevice', 'Set-AzIotHubDevice', 'Add-AzIotHubModule', 'Set-AzIotHubModule', 'Add-AzIotHubRoutingEndpoint'
+
+#### Az.KeyVault 6.5.0
+* ChangeSafety
+* Added support for creating AES 'oct-HSM' keys via 'Add-AzKeyVaultKey -KeyType oct -Destination HSM'.
+* Fixed 'New-AzKeyVault' 'RequestDisallowedByPolicy' error.
+* Removed certificate-backed items from 'Get-AzKeyVaultKey'/'Get-AzKeyVaultSecret'; use 'Get-AzKeyVaultCertificate' instead [#26217].
+
+#### Az.Kusto 3.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.LoadTesting 2.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.LogicApp 1.7.0
+* ChangeSafety
+
+#### Az.MachineLearning 1.3.0
+* ChangeSafety
+
+#### Az.MachineLearningServices 2.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.Maintenance 1.6.0
+* ChangeSafety
+
+#### Az.ManagedServices 4.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.Migrate 3.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.Monitor 8.0.0
+* ChangeSafety
+* Updated MonitorWorkspace module to API 2025-10-03 with CRUD cmdlets for issues, alerts, resources, investigation, visualization, metrics containers, 'Set-AzMonitorWorkspace'
+* Upgraded Pipelines API to GA 2026-04-01: added '-DistributionMaxInstancesPerHost', '-ExecutionPlacementConstraint', '-TlsConfiguration'; removed '-NetworkingConfiguration', UDP receiver, 'TcpUrl', 'JsonArrayMapperKey', 'SourceFieldName', 'SyslogProtocol', 'DestinationField*'; expanded parameter sets
+
+#### Az.MySql 2.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.NetAppFiles 1.3.0
+* ChangeSafety
+
+#### Az.Network 8.0.0
+* Fixed 'Approve-AzPrivateEndpointConnection', 'Deny-AzPrivateEndpointConnection', 'Get-AzPrivateEndpointConnection', 'Remove-AzPrivateEndpointConnection', 'Get-AzPrivateLinkResource'
+* Changed 'UserAssignedIdentityId' type to string[]
+
+#### Az.NetworkCloud 3.0.0
+* Upgraded API version to 2025-09-01
+* Preannounced breaking changes.
+
+#### Az.NotificationHubs 1.3.0
+* ChangeSafety
+
+#### Az.OperationalInsights 3.4.0
+* ChangeSafety
+
+#### Az.PolicyInsights 2.0.0
+* Changed output types: 'PSAttestation' → 'Attestation', 'PSPolicyMetadata' → 'PolicyMetadata', 'PSRemediation' → 'Remediation'; flattened 'SystemData', added 'ResourceGroupName'
+* Renamed 'ResourceTags'/'ManagementGroupIds' to singular forms in 'Get-AzPolicyEvent'/'Get-AzPolicyState'
+* Flattened 'Get-AzPolicyStateSummary', remediation output properties
+* Changed 'Start-AzPolicyRemediation' to wait for terminal state by default (added '-NoWait')
+* Changed 'Stop-AzPolicyRemediation' output from 'bool' to 'Remediation' (added '-NoWait')
+
+#### Az.PowerBIEmbedded 2.2.0
+* ChangeSafety
+
+#### Az.PrivateDns 1.3.0
+* ChangeSafety
+
+#### Az.RecoveryServices 7.12.0
+* ChangeSafety
+* Added soft delete support for Azure File share backup items ('Undo-AzRecoveryServicesBackupItemDeletion' 'Get-AzRecoveryServicesBackupItem -DeleteState SoftDeleted')
+
+#### Az.RedisCache 1.12.0
+* ChangeSafety
+
+#### Az.RedisEnterpriseCache 2.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.ResourceGraph 1.3.0
+* ChangeSafety
+
+#### Az.ResourceMover 2.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.Resources 10.0.0
+* Fixed dynamic parameter inheritance in deployment, deployment stack cmdlets
+* Updated deployment stack cmdlets to '2025-07-01' API; added '-ResourcesWithoutDeleteSupport' ('Fail'/'Detach'), '-ValidationLevel' ('Provider'/'Template'/'ProviderNoRbac'); output now includes these settings
+* Fixed 'Set-AzRoleAssignment' unable to delete conditions
+* Updated Policy.Autorest to 2025-03-01: added '-Expand', Enroll '-EnforcementMode', ExternalEvaluationEnforcementSettings, '-Version'; removed '-BackwardCompatible'
+* Fixed 'Get-AzRoleDefinition' null 'Condition' for ABAC on non-first permissions [#29058] [#25940]
+* [Breaking Change] Role definition cmdlets use 'Permissions' array with per-permission conditions; flattened properties removed from 'PSRoleDefinition'
+
+#### Az.Security 1.9.0
+* ChangeSafety
+
+#### Az.SecurityInsights 4.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.ServiceBus 4.2.0
+* ChangeSafety
+
+#### Az.ServiceFabric 5.2.0
+* ChangeSafety
+* Added 'Enable-AzServiceFabricManagedClusterMaintenanceWindow', 'Get-AzServiceFabricManagedClusterMaintenanceWindowStatus'
+
+#### Az.SignalR 3.0.0
+* ChangeSafety
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.Sql 7.0.0
+* ChangeSafety
+* Removed 'EnableSoftDelete' from 'New-AzSqlServer', 'Set-AzSqlServer'. Used 'SoftDeleteRetentionDays' instead: setting 'SoftDeleteRetentionDays'.
+* Reverted 'the support for UAMI authentication in Data Sync cmdlets'
+
+#### Az.SqlVirtualMachine 3.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.StackHCI 3.0.0
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
+#### Az.StackHCIVM 2.0.0
+* Fixed missing export of 'Save-AzStackHCIVMVirtualMachine', 'Suspend-AzStackHCIVMVirtualMachine'
+
+#### Az.Storage 9.7.0
+* Updated the prompt message for user confirmation of long running account migration operation in 'Start-AzStorageAccountMigration'
+* Added Storage task assignment TriggerType new value MockRun in 'New/Update-AzStorageTaskAssignment'
+* Fixed 'Get-AzStorageFileContent', 'Set-AzStorageFileContent'
+* Added Smart access tier, AllowedCopyScope 'All' support in 'New/Set-AzStorageAccount'
+* Added static website configuration in 'Update-AzStorageBlobServiceProperty'
+* Added tags replication in 'Set-AzStorageObjectReplicationPolicy'
+
+#### Az.StorageAction 2.0.0
+* Internal code generation updated.
+
+#### Az.StorageMover 2.1.0
+* Upgraded API version to 2025-12-01 (Connection resources, S3 HMAC endpoint, data integrity validation, schedule info, job run warnings)
+
+#### Az.StorageSync 2.6.0
+* ChangeSafety
+
+#### Az.Synapse 3.3.0
+* ChangeSafety
+
+#### Az.TrafficManager 1.4.0
+* ChangeSafety
+
+#### Az.Websites 4.0.0
+* ChangeSafety
+* [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
+
 ## 15.6.1 - May 2026
 #### Az.DataProtection 2.10.1
 * Fixed non-ASCII U+2013 characters failed module import in WindowsPowerShell
