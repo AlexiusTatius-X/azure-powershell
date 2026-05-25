@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 2.1.0
 * Upgraded API version to 2025-12-01 (Connection resources, S3 HMAC endpoint, data integrity validation, schedule info, job run warnings)
 
 ## Version 2.0.0

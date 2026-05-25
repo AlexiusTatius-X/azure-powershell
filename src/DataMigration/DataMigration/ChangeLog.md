@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 1.1.0
 * [Preannounced breaking changes](https://go.microsoft.com/fwlink/?linkid=2333229)
 * Fixed `Invoke-AzDataMigrationCommand`, `New-AzDataMigrationConnectionInfo`, `New-AzDataMigrationTask`
 

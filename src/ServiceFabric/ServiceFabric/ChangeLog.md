@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 5.2.0
 * Added `Enable-AzServiceFabricManagedClusterMaintenanceWindow`, `Get-AzServiceFabricManagedClusterMaintenanceWindowStatus`
 
 ## Version 5.1.0
