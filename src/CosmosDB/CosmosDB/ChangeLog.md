@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 1.21.0
 * Fixed `New-AzCosmosDBAccount`
 
 ## Version 1.20.0
