@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 9.7.0
 * Added ChangeSafety Support
     - Fixed `Get/Set-AzStorageFileContent` to properly inherit dynamic parameters from base cmdlet class
 * Updated prompt in `Start-AzStorageAccountMigration`
