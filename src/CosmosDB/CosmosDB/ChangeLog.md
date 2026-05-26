@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 1.21.0
 * Added ChangeSafety Support
 * Fixed `New-AzCosmosDBAccount` to properly inherit dynamic parameters from base cmdlet class
 
