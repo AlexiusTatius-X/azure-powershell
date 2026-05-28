@@ -19,6 +19,8 @@
 --->
 
 ## Upcoming Release
+
+## Version 7.28.0
 * Added ChangeSafety Support
     - Fixed Private Endpoint Connection and Private Link Resource cmdlets to properly inherit dynamic parameters from base cmdlet class
 * Changed `UserAssignedIdentityId` type to string[]

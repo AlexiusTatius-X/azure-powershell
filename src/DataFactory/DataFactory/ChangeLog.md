@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 1.20.0
 * Added ChangeSafety Support
 * Added 'Microsoft.DataTransfer.Gateway.Encryption.dll' to the Authenticode signing target in the release pipeline
 
