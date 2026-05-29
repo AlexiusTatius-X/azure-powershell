@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 5.5.0
 * Added Service Principal support for SSH certificate generation in 'SshCredentialFactory'
 * Upgraded `Azure.Identity` dependency to 1.17.2.
 * Added ChangeSafety Support
