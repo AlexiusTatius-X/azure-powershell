@@ -18,6 +18,8 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+
+## Version 2.2.0
 * [Upgraded code generator](https://go.microsoft.com/fwlink/?linkid=2340249)
 
 ## Version 2.1.2

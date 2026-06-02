@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 9.2.0
 * Added ChangeSafety Support
     - Fixed dynamic parameter inheritance in deployment and deployment stack cmdlets
 * Updated deployment stack cmdlets to `2025-07-01` API; added `-ResourcesWithoutDeleteSupport`, `-ValidationLevel`
