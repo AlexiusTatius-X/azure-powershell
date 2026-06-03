@@ -19,6 +19,8 @@
 -->
 
 ## Upcoming Release
+
+## Version 1.7.0
 * Added ChangeSafety Support
 
 ## Version 1.5.1
