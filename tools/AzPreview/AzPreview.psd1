@@ -12,7 +12,7 @@
 # RootModule = ''
 
 # Version number of this module.
-ModuleVersion = '16.0.0'
+ModuleVersion = '16.0.1'
 
 # Supported PSEditions
 CompatiblePSEditions = 'Core', 'Desktop'
@@ -52,7 +52,7 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '5.5.0'; }, 
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '5.5.1'; }, 
             @{ModuleName = 'Az.ADDomainServices'; RequiredVersion = '0.3.0'; }, 
             @{ModuleName = 'Az.Advisor'; RequiredVersion = '3.0.0'; }, 
             @{ModuleName = 'Az.Aks'; RequiredVersion = '7.2.0'; }, 
@@ -210,7 +210,7 @@ RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '5.5.0'; },
             @{ModuleName = 'Az.Quantum'; RequiredVersion = '0.2.0'; }, 
             @{ModuleName = 'Az.Qumulo'; RequiredVersion = '0.1.3'; }, 
             @{ModuleName = 'Az.Quota'; RequiredVersion = '0.2.0'; }, 
-            @{ModuleName = 'Az.RecoveryServices'; RequiredVersion = '7.12.0'; }, 
+            @{ModuleName = 'Az.RecoveryServices'; RequiredVersion = '7.12.1'; }, 
             @{ModuleName = 'Az.RedisCache'; RequiredVersion = '1.12.0'; }, 
             @{ModuleName = 'Az.RedisEnterpriseCache'; RequiredVersion = '2.0.0'; }, 
             @{ModuleName = 'Az.Relationships'; RequiredVersion = '0.1.0'; }, 
@@ -228,14 +228,14 @@ RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '5.5.0'; },
             @{ModuleName = 'Az.ServiceFabric'; RequiredVersion = '5.2.0'; }, 
             @{ModuleName = 'Az.ServiceGroups'; RequiredVersion = '0.1.0'; }, 
             @{ModuleName = 'Az.ServiceLinker'; RequiredVersion = '0.3.0'; }, 
-            @{ModuleName = 'Az.Sftp'; RequiredVersion = '0.2.0'; }, 
+            @{ModuleName = 'Az.Sftp'; RequiredVersion = '0.3.0'; }, 
             @{ModuleName = 'Az.SignalR'; RequiredVersion = '3.0.0'; }, 
             @{ModuleName = 'Az.Site'; RequiredVersion = '0.1.0'; }, 
             @{ModuleName = 'Az.Sphere'; RequiredVersion = '0.1.3'; }, 
             @{ModuleName = 'Az.SpringCloud'; RequiredVersion = '0.4.0'; }, 
             @{ModuleName = 'Az.Sql'; RequiredVersion = '7.0.0'; }, 
             @{ModuleName = 'Az.SqlVirtualMachine'; RequiredVersion = '3.0.0'; }, 
-            @{ModuleName = 'Az.Ssh'; RequiredVersion = '0.3.0'; }, 
+            @{ModuleName = 'Az.Ssh'; RequiredVersion = '0.3.1'; }, 
             @{ModuleName = 'Az.StackHCI'; RequiredVersion = '3.0.0'; }, 
             @{ModuleName = 'Az.StackHCIVM'; RequiredVersion = '2.0.0'; }, 
             @{ModuleName = 'Az.StandbyPool'; RequiredVersion = '0.4.0'; }, 

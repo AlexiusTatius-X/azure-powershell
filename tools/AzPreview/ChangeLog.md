@@ -1,3 +1,16 @@
+## 16.0.1 - July 2026
+#### Az.Accounts 5.5.1
+<<<<<<< Daily/Release_20260527062757
+
+#### Az.RecoveryServices 7.12.1
+* Added Cross region restore support for Delos cloud regions
+
+#### Az.Sftp 0.3.0
+* Added Service Principal support for SFTP with Entra ID (AAD) login
+
+#### Az.Ssh 0.3.1
+* Added Service Principal support for SSH with Entra ID (AAD) login
+
 ## 16.0.0 - June 2026
 #### Az.Accounts 5.5.0
 * Added ChangeSafety Support
